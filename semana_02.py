@@ -8,6 +8,7 @@ def invertir_lista(lista):
 print(invertir_lista(lista))
 
 # Ejercicio 2
+
 def collatz(nro):
     if not isinstance(nro, int):  # Verificar que el número sea entero
         raise ValueError("El número debe ser un entero.")
@@ -86,6 +87,8 @@ def propagar(fosforos):
 
 print(propagar(fosforos_1))
 print(propagar(fosforos_2))
+
+
 
 
           
