@@ -64,7 +64,7 @@ print(cantidad_de_claves_letra(Equipos, "l"))
 
 #Ejercicio 4
 
-fosforos_1 = [0, 0, 1, 0, 0, -1, 0, 1, 0, 0]
+fosforos_1 = [0, -1, 1, 0, 0, -1, 0, 1, 0, 0]
 fosforos_2 = [0, 0, 0, 0, 0, 1, 0, 0, -1, 0]
 
 
@@ -74,11 +74,12 @@ def propagar(fosforos):
             j = i - 1 # Propagacion hacia la izquierda
             while j >= 0 and fosforos[j] == 0: #Mientras que haya fosforos nuevos hacia la izquierda
                 fosforos[j] = 1 #se propaga el fuego
-                j -= 1 #se mueve a la izquierda
+                j -= 1 #se mueve a la izquierda, necesario porque implicitamnte el for avanza hacia la derecha
 
             j = i + 1 # Propagacion hacia la derecha
             while j < len(fosforos) and fosforos[j] == 0: #Mientras que haya fosforos nuevos hacia la derecha
                 fosforos[j] = 1 #se propaga el fuego
+                #j += 1 #no es necesario porque, implicitamnte el for avanza hacia la derecha
     return fosforos
 
                 
