@@ -60,8 +60,37 @@ def cantidad_de_claves_letra(d, l):
             contador +=1
     return contador
 
-print(cantidad_de_claves_letra(Equipos, "r"))
-       
+print(cantidad_de_claves_letra(Equipos, "l"))
+
+#Ejercicio 4
+
+fosforos_1 = [0, 0, 1, 0, 0, -1, 0, 1, 0, 0]
+fosforos_2 = [0, 0, 0, 0, 0, 1, 0, 0, -1, 0]
+
+
+def propagar(fosforos):
+    for i in range(len(fosforos)):
+        if fosforos[i] == 1: #solo se propaga si i es 1
+            j = i - 1 # Propagacion hacia la izquierda
+            while j >= 0 and fosforos[j] == 0: #Mientras que haya fosforos nuevos hacia la izquierda
+                fosforos[j] = 1 #se propaga el fuego
+                j -= 1 #se mueve a la izquierda
+
+            j = i + 1 # Propagacion hacia la derecha
+            while j < len(fosforos) and fosforos[j] == 0: #Mientras que haya fosforos nuevos hacia la derecha
+                fosforos[j] = 1 #se propaga el fuego
+    return fosforos
+
+                
+
+print(propagar(fosforos_1))
+print(propagar(fosforos_2))
+
+
+          
+
+
+
 
 
 
