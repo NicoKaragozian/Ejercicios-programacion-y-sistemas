@@ -28,14 +28,14 @@ def collatz(nro):
 
 print(collatz(117))
 
-#Ejercicio 3
+#Ejercicio 3a
 
 Equipos = {
     "River": ["Gallardo", "Libertadores"],
     "Boca": ["Gago", "Nada", "Tristeza"],
 }
 
-def diccionario (d):
+def contar_definiciones(d):
     #Creo un diccionario nuevo vacio para almacenar las respuestas
     nuevo_diccionario = {}
 
@@ -46,7 +46,21 @@ def diccionario (d):
 
     return nuevo_diccionario
 
-print(diccionario(Equipos))
+print(contar_definiciones(Equipos))
+
+#Ejercicio 3b
+
+def cantidad_de_claves_letra(d, l):
+    contador = 0
+    
+    for clave in d:
+        if clave.lower().startswith(l.lower()):
+            # .lower() convierte todo el string en minusculas
+            # .startswith() verifica si el string empieza con la letra indicada
+            contador +=1
+    return contador
+
+print(cantidad_de_claves_letra(Equipos, "r"))
        
 
 
