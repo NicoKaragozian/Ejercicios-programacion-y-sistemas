@@ -28,5 +28,27 @@ def collatz(nro):
 
 print(collatz(117))
 
+#Ejercicio 3
+
+Equipos = {
+    "River": ["Gallardo", "Libertadores"],
+    "Boca": ["Gago", "Nada", "Tristeza"],
+}
+
+def diccionario (d):
+    #Creo un diccionario nuevo vacio para almacenar las respuestas
+    nuevo_diccionario = {}
+
+    for clave in d: #itero sobre cada clave en el diccionario original
+        cantidad_definiciones = len(d[clave]) #calcula la cantidad de claves en el diccionario
+
+        nuevo_diccionario[clave] = cantidad_definiciones #agrega la clave y el valor al nuevo diccionario
+
+    return nuevo_diccionario
+
+print(diccionario(Equipos))
+       
+
+
 
         
