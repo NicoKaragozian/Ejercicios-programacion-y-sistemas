@@ -1,3 +1,4 @@
+#%%
 # Ejercicio 1
 
 lista = [1, 2, 3, 4, 5]
@@ -7,6 +8,14 @@ def invertir_lista(lista):
 
 print(invertir_lista(lista))
 
+# Otra forma de hacerlo, mas manual
+result = []
+for i in range(len(lista)):
+    result.append(lista[-i-1])
+    lista[-i-1] = lista[i]  # esto es un swap, intercambia los valores de la lista
+print(result)
+
+#%%
 # Ejercicio 2
 
 def collatz(nro):
@@ -29,6 +38,21 @@ def collatz(nro):
 
 print(collatz(117))
 
+# Version recursiva del ejercicio
+def collatz_rec(n):
+    if n == 1: #Caso base, si el numero es 1, retorna 0 porque no se necesitan pasos
+        return 0
+    else:
+        if n % 2 == 0:
+            n = n/2
+        else:
+            n = n*3+1
+        respuesta = collatz_rec(n)
+        return respuesta + 1 #suma 1 al resultado de la llamada recursiva para contar el paso actual
+
+print(collatz_rec(117))
+
+#%%
 #Ejercicio 3a
 
 Equipos = {
@@ -63,6 +87,7 @@ def cantidad_de_claves_letra(d, l):
 
 print(cantidad_de_claves_letra(Equipos, "l"))
 
+#%%
 #Ejercicio 4
 
 fosforos_1 = [0, -1, 1, 0, 0, -1, 0, 1, 0, 0]
@@ -91,11 +116,11 @@ print(propagar(fosforos_2))
 
 
 
-          
 
 
 
 
 
 
-        
+
+
