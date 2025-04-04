@@ -1,1 +1,4 @@
 # Ejercicio figuritas
+
+import random
+
