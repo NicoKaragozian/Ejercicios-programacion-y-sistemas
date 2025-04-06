@@ -47,12 +47,12 @@ def cuantas_figus(figus_total):
 #prueba = cuantas_figus(figus_total)
 #print(prueba)
 #Ejercicio 5
-n_repeticiones = 1000 #Numero de repeticiones
-figus_total = 6
+n_repeticiones = 100 #Numero de repeticiones
+figus_total = 860
 
-resultado = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
-promedio = sum(resultado)/ n_repeticiones #Promedio de figuritas compradas
-#print(promedio)
+cant_figus = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+promedio_figus = sum(cant_figus)/ n_repeticiones #Promedio de figuritas compradas
+print(promedio_figus) #Imprime el promedio de figuritas compradas
 
 #Ejercicio 6
 def experimento_figus(n_repeticiones, figus_total):
@@ -88,7 +88,14 @@ def cuantos_paquetes(figus_total, figus_paquete):
 figus_total = 860
 figus_paquete = 5
 
-print(cuantos_paquetes(figus_total, figus_paquete))
+#print(cuantos_paquetes(figus_total, figus_paquete))
+
+#Ejercicio 10
+n_repeticiones = 100 #Numero de repeticiones
+cant_paquetes = [cuantos_paquetes(figus_total, figus_paquete) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+promedio_paquetes = sum(cant_paquetes)/ n_repeticiones #Promedio de paquetes comprados
+print(promedio_paquetes)  
+
     
 
 
