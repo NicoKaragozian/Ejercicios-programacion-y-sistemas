@@ -65,3 +65,31 @@ n_repeticiones = 100
 #prueba = experimento_figus(n_repeticiones, figus_total)
 #print(prueba)
 
+#Ejercicio 7 y 8
+figus_paquete = 5
+
+def comprar_paquete(figus_total, figus_paquete):
+    paquete = [comprar_figu(figus_total) for _ in range(figus_paquete)] #Lista con las figuritas del paquete
+    return paquete #Devuelve el paquete
+
+#Ejercicio 9
+def cuantos_paquetes(figus_total, figus_paquete):
+    album = crear_album(figus_total) #Crea el album vacio
+    paquetes_comprados = 0 #Contador de paquetes comprados
+
+    while album_incompleto(album): #Mientras el album no este completo
+        paquete = comprar_paquete(figus_total, figus_paquete) #Compra un paquete
+        paquetes_comprados += 1 #Aumenta el contador de paquetes comprados
+
+        for figu in paquete:
+            album[figu] += 1
+    return paquetes_comprados #Devuelve el contador de paquetes comprados
+
+figus_total = 860
+figus_paquete = 5
+
+print(cuantos_paquetes(figus_total, figus_paquete))
+    
+
+
+# %%
