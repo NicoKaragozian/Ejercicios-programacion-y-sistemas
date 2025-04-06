@@ -1,5 +1,5 @@
+#%%
 #Ejercicio figuritas
-
 import random 
 import numpy as np
 
@@ -7,7 +7,6 @@ import numpy as np
 #Álbum con 860 figuritas.
 #Cada figurita se imprime en cantidades iguales y se distribuye aleatoriamente.
 #Cada paquete trae cinco figuritas.
-
 figus_total = 860
 #Creo la funcion que crea el album vacio
 def crear_album(figus_total):
@@ -24,7 +23,6 @@ def album_incompleto(A):
         if A[i] == 0:
             return True
     return False
-
 #print(album_incompleto(album))
 
 #Funcion que devuelve un numero random entre 0 y 859
@@ -34,7 +32,6 @@ def comprar_figu(figus_total):
 
 #prueba = comprar_figu(figus_total)
 #print(prueba)
-
 #Ejercicio 4
 def cuantas_figus(figus_total):
     album = crear_album(figus_total) #Crea el album vacio
@@ -49,5 +46,22 @@ def cuantas_figus(figus_total):
     
 #prueba = cuantas_figus(figus_total)
 #print(prueba)
+#Ejercicio 5
+n_repeticiones = 1000 #Numero de repeticiones
+figus_total = 6
 
+resultado = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+promedio = sum(resultado)/ n_repeticiones #Promedio de figuritas compradas
+#print(promedio)
+
+#Ejercicio 6
+def experimento_figus(n_repeticiones, figus_total):
+    resultado = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+    promedio = sum(resultado)/ n_repeticiones #Promedio de figuritas compradas
+    return promedio #Devuelve el promedio de figuritas compradas
+    
+figus_total = 860
+n_repeticiones = 100
+#prueba = experimento_figus(n_repeticiones, figus_total)
+#print(prueba)
 
