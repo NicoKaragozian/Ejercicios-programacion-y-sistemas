@@ -25,7 +25,7 @@ def album_incompleto(A):
             return True
     return False
 
-print(album_incompleto(album))
+#print(album_incompleto(album))
 
 #Funcion que devuelve un numero random entre 0 y 859
 def comprar_figu(figus_total):
@@ -35,19 +35,19 @@ def comprar_figu(figus_total):
 #prueba = comprar_figu(figus_total)
 #print(prueba)
 
-#Esta mal seguir probando
+#Ejercicio 4
 def cuantas_figus(figus_total):
     album = crear_album(figus_total) #Crea el album vacio
-    contador = 0 #Contador de paquetes comprados
+    figuritas_compradas = 0 #Contador de paquetes comprados
 
     while album_incompleto(album): #Mientras el album no este completo
         figu = comprar_figu(figus_total) #Compra una figurita
-        figuritas_compradas =+ 1 #Aumenta el contador de figuritas compradas
-        album[figu] = 1
+        figuritas_compradas += 1 #Aumenta el contador de figuritas compradas
+        album[figu] += 1
 
-        return figuritas_compradas #Devuelve el contador de figuritas compradas
+    return figuritas_compradas #Devuelve el contador de figuritas compradas
     
-prueba = cuantas_figus(figus_total)
-print(prueba)
+#prueba = cuantas_figus(figus_total)
+#print(prueba)
 
 
