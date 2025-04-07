@@ -71,24 +71,30 @@ def cuantos_paquetes(figus_total, figus_paquete):
 #prueba = cuantas_figus(figus_total)
 #print(prueba)
 
-#Ejercicio 5
-n_repeticiones = 1000 #Numero de repeticiones
-figus_total = 6
-cant_figus = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
-promedio_figus = sum(cant_figus)/ n_repeticiones #Promedio de figuritas compradas
-#print(f"Promedio de figuritas compradas para album de 6 figuritas: {promedio_figus}")
+def main():
 
-#Ejercicio 6  
-n_repeticiones = 100 #Numero de repeticiones
-figus_total = 860 #Numero de figuritas
-cant_figus = experimento_figus (n_repeticiones, figus_total) #Ejecuta el experimento de figuritas
-#print(f"Promedio de figuritas compradas para album de 860 figuritas: {cant_figus}")
+    # Ejercicio 5
+    n_repeticiones = 1000 #Numero de repeticiones
+    figus_total = 6
+    cant_figus = [cuantas_figus(figus_total) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+    promedio_figus = sum(cant_figus)/ n_repeticiones #Promedio de figuritas compradas
+    # print(f"Promedio de figuritas compradas para album de 6 figuritas: {promedio_figus}")
 
-#Ejercicio 10
-n_repeticiones = 1000
-figus_total = 860
-figus_paquete = 5
-cant_paquetes = [cuantos_paquetes(figus_total, figus_paquete) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
-promedio_paquetes = sum(cant_paquetes)/ n_repeticiones #Promedio de paquetes comprados
-#print(f"Promedio de paquetes comprados para album de 860 figuritas: {promedio_paquetes}")
-# %%
+    #Ejercicio 6  
+    n_repeticiones = 100 #Numero de repeticiones
+    figus_total = 860 #Numero de figuritas
+    cant_figus = experimento_figus (n_repeticiones, figus_total) #Ejecuta el experimento de figuritas
+    # print(f"Promedio de figuritas compradas para album de 860 figuritas: {cant_figus}")
+
+    #Ejercicio 10
+    n_repeticiones = 1000
+    figus_total = 860
+    figus_paquete = 5
+    cant_paquetes = [cuantos_paquetes(figus_total, figus_paquete) for _ in range(n_repeticiones)] #Lista con los resultados de cada repeticion
+    promedio_paquetes = sum(cant_paquetes)/ n_repeticiones #Promedio de paquetes comprados
+    # print(f"Promedio de paquetes comprados para album de 860 figuritas: {promedio_paquetes}")
+    # %%
+
+if __name__ == "__main__":
+    main()
+
