@@ -23,15 +23,6 @@ def arboles_parque (nombre_archivo, nombre_parque):
                 diccionario_parque[id_arbol] = fila
     return diccionario_parque
 
-#prueba = arboles_parque(arbolado_csv, "INDOAMERICANO")
-#for i, (id_arbol, datos) in enumerate(prueba.items()):
-#    print(f"ID árbol: {id_arbol}")
- #   print("Datos:", datos)
-  #  print("-" * 40)
-    
-   # if i == 2:  # Mostramos solo los primeros 3
-    #    break
-
 #Ejercicio 2
 def arbol_mas_popular(nombre_parque):
     cantidad_arboles = {}
@@ -42,13 +33,8 @@ def arbol_mas_popular(nombre_parque):
         else:
             cantidad_arboles[arbol["nombre_com"]] = 1
     
-    #return cantidad_arboles
-    
     mas_popular = max(cantidad_arboles, key=cantidad_arboles.get)
     return mas_popular
-
-#prueba = arbol_mas_popular("INDOAMERICANO")
-#print(f"El árbol más popular en el parque es: {prueba}")
 
 #Ejercicio 3
 def n_mas_altos(nombre_parque, n):
@@ -72,9 +58,6 @@ def n_mas_altos(nombre_parque, n):
 
     return arboles_ordenados[:n]
 
-#prueba = n_mas_altos("INDOAMERICANO", 5)
-#print (prueba)
-
 #Ejercicio 4
 def altura_promedio(nombre_parque, especie):
     arboles = arboles_parque(arbolado_csv, nombre_parque)
@@ -87,9 +70,6 @@ def altura_promedio(nombre_parque, especie):
     if cantidad_arboles == 0:
         return "No hay árboles de esta especie en el parque."
     return suma_altura / cantidad_arboles
-
-#prueba = altura_promedio("INDOAMERICANO", "Eucalipto")
-#print (prueba)
 
 #Ejercicio 5
 def parques_mas_arboles(n):
@@ -107,9 +87,6 @@ def parques_mas_arboles(n):
 
     parques_ordenados = sorted(cantidad_por_parque.items(), key=lambda x: x[1], reverse=True)
     return parques_ordenados[:n]
-
-#prueba = parques_mas_arboles(5)
-#print(prueba)
 
 def alturas_por_parque():
     alturas = {}
@@ -139,10 +116,6 @@ def parques_mas_altos_promedio(n):
     promedios = alturas_por_parque()
     return sorted(promedios, key=lambda x: x[1], reverse=True)[:n]
 
-
-#prueba = parques_mas_altos_promedio(5)
-#print(prueba)
-
 def especies_por_parque():
     especies = {}
 
@@ -167,9 +140,6 @@ def parques_mas_diversos(n):
     variedad = especies_por_parque()
     return sorted(variedad, key=lambda x: x[1], reverse=True)[:n]
 
-#prueba = parques_mas_diversos(5)
-#print(prueba)
-
 def especie_mas_comun():
     conteo = {}
     with open(arbolado_csv, encoding="utf-8") as archivo:
@@ -178,9 +148,6 @@ def especie_mas_comun():
             especie = fila["nombre_com"]
             conteo[especie] = conteo.get(especie, 0) + 1
     return max(conteo.items(), key=lambda x: x[1])
-
-#prueba = especie_mas_comun()
-#print(f"La especie más común es: {prueba[0]} con {prueba[1]} ejemplares.")
 
 def razon_exoticas_autoctonas():
     exoticas = 0
@@ -196,9 +163,6 @@ def razon_exoticas_autoctonas():
     if autoctonas == 0:
         return float('inf')
     return exoticas / autoctonas
-
-#prueba = razon_exoticas_autoctonas()
-#print(f"La razón de árboles exóticos a autóctonos es: {prueba:.2f}")
 
 if __name__ == "__main__":
 
