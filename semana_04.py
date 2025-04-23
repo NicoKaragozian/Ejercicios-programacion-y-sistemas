@@ -200,4 +200,26 @@ def razon_exoticas_autoctonas():
 #prueba = razon_exoticas_autoctonas()
 #print(f"La razón de árboles exóticos a autóctonos es: {prueba:.2f}")
 
+if __name__ == "__main__":
+
+    print("\n--- Parques con mayor cantidad de árboles ---")
+    for parque, cantidad in parques_mas_arboles(5):
+        print(f"{parque}: {cantidad} árboles")
+
+    print("\n--- Parques con árboles más altos en promedio ---")
+    for parque, promedio in parques_mas_altos_promedio(5):
+        print(f"{parque}: altura promedio {promedio:.2f} m")
+
+    print("\n--- Parques con más variedad de especies ---")
+    for parque, cantidad in parques_mas_diversos(5):
+        print(f"{parque}: {cantidad} especies distintas")
+
+    print("\n--- Especie más frecuente en la ciudad ---")
+    especie, cantidad = especie_mas_comun()
+    print(f"{especie}: {cantidad} ejemplares")
+
+    print("\n--- Razón entre especies exóticas y autóctonas ---")
+    razon = razon_exoticas_autoctonas()
+    print(f"Razón exóticas/autóctonas: {razon:.2f}")
+
 # %%
