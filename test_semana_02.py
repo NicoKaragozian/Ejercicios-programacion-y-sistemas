@@ -22,7 +22,7 @@ class TestInvertirLista(unittest.TestCase):
     def test_lista_vacia(self):
         self.assertEqual(invertir_lista([]), [])
 
-# ---------- TEST PARA CONJETURA DE COLLATZ ----------
+# ---------- TEST PARA COLLATZ ----------
 class TestCollatz(unittest.TestCase):
 
     def test_numero_positivo(self):
@@ -45,6 +45,14 @@ class TestContarDefiniciones(unittest.TestCase):
         }
         self.assertEqual(contar_definiciones(d), {"River": 2, "Boca": 3})
 
+    def test_diccionario_con_definiciones2(self):
+        d = {
+            "Lobo": ["Caza", "Montaña"],
+            "Leon": ["Selva", "Rey"],
+            "Tigre": ["Selva"]
+        }
+        self.assertEqual(contar_definiciones(d), {"Lobo": 2, "Leon": 2, "Tigre": 1})
+
     def test_diccionario_vacio(self):
         d = {}
         self.assertEqual(contar_definiciones(d), {})
@@ -59,6 +67,13 @@ class TestCantidadClavesLetra(unittest.TestCase):
             "Tigre": ["Selva"]
         }
         self.assertEqual(cantidad_de_claves_letra(d, "L"), 2)
+
+    def test_claves_con_letra2(self):
+        d = {
+            "River": ["Gallardo", "Libertadores"],
+            "Boca": ["Gago", "Nada", "Tristeza"],
+        }
+        self.assertEqual(cantidad_de_claves_letra(d, "R"), 1)
 
     def test_claves_sin_coincidencia(self):
         d = {"Perro": ["Casa"]}
